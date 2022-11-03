@@ -1,0 +1,115 @@
+VERSION 1.4.1: LightRP Reloaded
+November 8th, 2008
+
+[Fix] /addowner and /removeowner were blocked
+[Fix] Phantom "Owned By:" labels on doors
+
+
+VERSION 1.4: LightRP Reloaded
+November 2nd, 2008
+
+[Add] CfgVar "physgun"
+[Add] Players now spawn with Cameras
+[Add] rp_doorcost <amount> - The Cost to buy a door.
+[Fix] Critical exploit which allowed command execution on all connected clients
+[Fix] Tidy the code throughout the entire gamemode
+[Changed] Backported from DarkRP:
+                - util.lua, enabling player lookups by name
+                - chat.lua, allowing chat commands that start with the same character sequence as another command without causing a conflict
+                - F1 menu scroll direction fixed
+                - /queryvar command to allow clients to query server CfgVar values
+                - anti-deathmatch feature rp_dm_autokick, rp_dm_maxkills and rp_dm_gracetime
+[Fix by [GNC] Matt] Hit and run now registers as a kill by the driver
+[Fix by [GNC] Matt] Keys work on vehicles at a greater distance
+[Fix by philxyz] Backport /give and /moneydrop from my new unreleased gamemode. Only whole amounts are allowed and minimum give amount is 2 dollars
+[Fix by philxyz] Fix a bunch of Lua errors
+[Add] Police battering ram can now be used to force people out of vehicles
+[Add] Demote mechanism
+[Add] Multiple Jail system from DarkRP
+[Fix] Replace IsValid() with calls to G.ValidEntity()
+[Fix] Remove the ability to screw up your money
+[Add] Add /ao and /ro as aliases for /addowner and /removeowner respectively
+[Removed] rp_rcon command. DarkRP admins are NOT meant to be super admins
+[Fix] Vehicle npc kills register as a kill by the driver
+[Fix] All players now pay for props if rp_proppaying is enabled, not just the admins
+[Fix] Prevent /mayor and /cp during a vote (prevents players exceeding the team quota)
+[Fix] Prevent all manner of items from being spawned by a player under arrest
+[Fix] Right click kill mode of stunstick
+[Fix] Only Admin or SuperAdmin can alter rp_chatprefix, rp_setmoney, rp_paydaytime or rp_setsalary (not DarkRP Admin)
+[Add] Arresting an NPC will now send it to the jailpos.
+[Changed] Make all "&&", "||" and "!" into "and", "or" and "not" (pure lua)
+[Changed] Rename rplol.lua to main.lua and merge commands.lua into admincc.lua
+[Changed] Recode the admin system so that you no longer have to restart LightRP to add privileges for players (rp_grant and rp_revoke)
+[Removed] rp_add temporary admin maker command
+[Add] Add a group chat command (/g) that allows Overwatch players and CP players to talk together privately
+[Fix] Block by default the large blue dumpster that mingebags use to trap other players
+[Fix] Completely rewrite the team change code
+[Add] The ability to register NPC prop kills to the player who created the prop
+[Add] Jail positions for 30 of the most popular RP maps
+[Add] You can now set your own currency symbol in shared.lua
+[Add] /removeletters command to remove your own letters
+[Add] rp_removeletters [Name] command to enable admin removal of all or a specific player's letters
+[Add] /rm command to allow a player to delete their own letters (aim first)
+[Changed] Move LightRP to SQLite by default
+[Changed] RP Admins can no longer kick or ban other RP admins or server admins
+[Changed] Prevent No-Collide tool on vehicles (rp_enforcevehiclenocollide 0 to disable)
+[Removed] Loading of rp_* commands from data/LightRP/servercfg.txt - it never worked, even once I'd fixed it. Stick to your custom scripts for now
+[Add] Blocked some more props by default
+[Fix] Clean up unemployment and bum / hobo mode
+[Fix] Change one or two sentences to improve readability
+[Fix by philxyz] Lua errors in player_row.lua if a player disconnects while the player list is being viewed
+[Fix by philxyz] Getting stuck in a vehicle when changing your job (found by Chrome Bolt) and being demoted (found by David Blaine)
+[Fix by philxyz] Flickering text when inside a vehicle (credit goes to David Blaine on facepunch for the idea!)
+[Fix by philxyz] /job command should intercept job names that are similar to or exactly the names in the main F2 job menu and change the player's team
+[Fix by philxyz] Make most calls to the Notify() function last at least 4 seconds
+[Fix by philxyz] Players walking too quickly for it to be realistic
+[Changed by philxyz] Super admins can now make a door non-ownable by pressing F2 on it. The setting remains during a server restart until F2 is pressed on that door again or the database is cleared
+[Fix by philxyz] The ability to own or unown a door while arrested
+[Fix by philxyz] The use of player commands on a door which has been disabled
+[Changed by philxyz] Add a minimum number of characters (3) to the /job command
+[Changed by philxyz] Non-ownable doors can now have a title (/title from a super admin when door is disabled)
+
+
+VERSION 1.3
+February 1, 2007
+
+[Add] Help labels are created more efficiently, and allow for newer help commands added by modules
+[Add] Amount console variables are created more efficiently with AddValueCommand
+[Add] rp_tell <Name/Partial-Name> <Message> - Send an admin message to a player
+[Add] "Hunger Mod" module
+[Add] /write - Write letters.
+[Add] Multiple owners for doors
+[Add] OW votes
+[Add] More toggleables for CP-voting/OW-voting
+[Add] rp_enforcemodels  <1 or 0> - Set if player model enforcement should be enabled (players can use zombie models, combine models, etc.. )
+[Add] rp_lock, rp_unlock - Lock/unlock doors you're facing
+[Add] rp_own, rp_unown - Own/unown doors
+[Add] rp_addowner <Name>, rp_removeowner <Name> - Add/remove co-owners
+[Add] rp_adminsents <1 or 0> - Should SENTs be spawnable by only admins
+[Add] /pm chat command
+[Add] data/LightRP/servercfg.txt, allowing you to do rp admin commands on server start up without modifying the script.  YOU HAVE TO CREATE THIS FILE MANUALLY.
+[Add] Admin commands to toggle prop paying/change prop spawning price
+[Add] /help chat command
+[Fix] Console can now do rp admin commands
+[Fix] Help menu reorganized
+[Fix] Changing chat prefix would glitch up the help menu
+[Fix] You can lock/unlock owned vehicles 
+[Fix] You can vote anytime you're in gui "clicker" mode.
+[Fix] /give and /drop money can't do negative money
+
+
+VERSION 1.2
+January 30, 2007
+
+[Fix] Players couldnt spawn wheels/thrusters/lamps/etc...
+[Add] rp_adminsweps, toggles whether all sweps should be admin only.
+[Add] rp_chatprefix, change the chat prefix for commands, like /votecop to !votecop
+
+VERSION 1.1
+January 29, 2007
+
+[Add] rp_toolgun - Toggle toolguns
+[Add] Allowed props, rp_allowedprops ( bannedprops.lua )
+[Add] rp_propspawning
+[Add] Module scripts (should be self explanatory to developers)
+[Fix] Toggle concommands are scripted more efficiently

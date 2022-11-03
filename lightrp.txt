@@ -1,0 +1,21 @@
+"lightrp"
+{
+	"base"		 "sandbox"
+	"title"		 "LightRP"
+	"version"	 "1.4.1"
+	"maps"		 "^rp_"
+	"category"	 "rp"
+	"menusystem" "1"
+	
+	"author_name"   "Fixed by Yushe. Created by: Rick Darkaliono + philxyz"
+    "author_email"  ""
+    "author_url"    "https://github.com/Yushe/LightRP"
+	
+	"icon"  ""
+    "info"  ""
+    "hide"  "0"
+
+	"settings"
+	{
+	}
+}
